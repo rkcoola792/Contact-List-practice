@@ -1,4 +1,4 @@
-const { Console } = require("console");
+
 const express = require("express");
 const port = 8000;
 const path = require("path");
@@ -16,6 +16,7 @@ app.use(express.urlencoded());
 
 // handling the get request for home
 app.get("/", function (req, res) {
+  
   //   Fetching the documents from database
   Contact.find({}, (err, contacts) => {
     if (err) {
@@ -25,6 +26,8 @@ app.get("/", function (req, res) {
       return;
     }
     res.render("home", {
+
+      // context variable passing 
       title: "Contact List",
       contact_list: contacts,
     });
@@ -33,6 +36,7 @@ app.get("/", function (req, res) {
 
 // hadling the post request for creating a contact
 app.post("/create-contact", function (req, res) {
+  
   // adding to the database
   Contact.create(
     {

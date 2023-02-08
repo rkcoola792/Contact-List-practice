@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // this is how our mongoose will cconect to the dataabass(connected to the database)
 mongoose.connect("mongodb://localhost/contacts_lists_db");
 
-// acquiring the connection, connection between databse and mongoose,db is goona be usedd to acces the database
+// acquiring the connection, connection between databse and mongoose,db is gonna be usedd to acces the database
 const db = mongoose.connection;
 
 // error
